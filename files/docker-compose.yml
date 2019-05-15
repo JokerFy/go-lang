@@ -1,0 +1,12 @@
+version: '3.2'
+
+services:
+  go-lang:
+      container_name: go-lang
+      build: ./go
+      ports:
+        - "8099:80"
+      volumes:
+        - ../logs/go:/var/log/go:rw
+        - ../app:/www/:rw
+      tty: true
